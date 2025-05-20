@@ -1,0 +1,832 @@
+{
+	"info": {
+		"_postman_id": "c1e4cd40-528d-4831-9e43-2cc3e0790cc1",
+		"name": "employer_management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "45112175",
+		"_collection_link": "https://mdjahirulislam.postman.co/workspace/48fb4757-edc3-4b66-8825-8111213d4145/collection/45112175-c1e4cd40-528d-4831-9e43-2cc3e0790cc1?action=share&source=collection_link&creator=45112175"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzQ1MTYxLCJpYXQiOjE3NDc3NDE1NjEsImp0aSI6ImFlOTcwMWEzZjlmMzQ0MGE4MjdjZjQzNjgzN2ExNzE3IiwidXNlcl9pZCI6M30.u-Y6z7MW1J-GesXQ-dY8m4LE03SUwDab4pSmcmcfKOk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"karim@gmail.com\",\n    \"password\": \"abcd1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}api/auth/signup/"
+			},
+			"response": [
+				{
+					"name": "already registered",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzQ1MTYxLCJpYXQiOjE3NDc3NDE1NjEsImp0aSI6ImFlOTcwMWEzZjlmMzQ0MGE4MjdjZjQzNjgzN2ExNzE3IiwidXNlcl9pZCI6M30.u-Y6z7MW1J-GesXQ-dY8m4LE03SUwDab4pSmcmcfKOk",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sarafat@gmail.com\",\n    \"password\": \"abcd1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000//api/auth/signup/"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"email\": [\n        \"custom user with this email already exists.\"\n    ]\n}"
+				},
+				{
+					"name": "signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzQ1MTYxLCJpYXQiOjE3NDc3NDE1NjEsImp0aSI6ImFlOTcwMWEzZjlmMzQ0MGE4MjdjZjQzNjgzN2ExNzE3IiwidXNlcl9pZCI6M30.u-Y6z7MW1J-GesXQ-dY8m4LE03SUwDab4pSmcmcfKOk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"karim@gmail.com\",\n    \"password\": \"abcd1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/auth/signup/"
+					},
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"karim@gmail.com\",\n    \"password\": \"abcd1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}api/auth/login/"
+			},
+			"response": [
+				{
+					"name": "user not found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"karim@gmail.com\",\n    \"password\": \"abcd123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/auth/login/"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"non_field_errors\": [\n        \"Email or password didn't match\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzUyNzc4LCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6ImJlM2NjZWFmZTJkNTQwYzhhYjVlNDRjYTgwYmFjNTAxIiwidXNlcl9pZCI6NH0.ezyXiOv67ovg3hyXZ24wN8r8q0T188eInemkZRGwds8",
+						"type": "text"
+					}
+				],
+				"url": "{{base_url}}api/auth/profile/"
+			},
+			"response": [
+				{
+					"name": "expired token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzUyNzc4LCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6ImJlM2NjZWFmZTJkNTQwYzhhYjVlNDRjYTgwYmFjNTAxIiwidXNlcl9pZCI6NH0.ezyXiOv67ovg3hyXZ24wN8r8q0T188eInemkZRGwds8",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/auth/profile/"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Given token not valid for any token type\",\n    \"code\": \"token_not_valid\",\n    \"messages\": [\n        {\n            \"token_class\": \"AccessToken\",\n            \"token_type\": \"access\",\n            \"message\": \"Token is expired\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "token not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzUyNzc4LCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6ImJlM2NjZWFmZTJkNTQwYzhhYjVlNDRjYTgwYmFjNTAxIiwidXNlcl9pZCI6NH0.ezyXiOv67ovg3hyXZ24wN8r8q0T188eInemkZRGwds8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": "{{base_url}}api/auth/profile/"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+				},
+				{
+					"name": "page not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzUyNzc4LCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6ImJlM2NjZWFmZTJkNTQwYzhhYjVlNDRjYTgwYmFjNTAxIiwidXNlcl9pZCI6NH0.ezyXiOv67ovg3hyXZ24wN8r8q0T188eInemkZRGwds8",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}api/auth/profile/2"
+					},
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/html",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">\n        <title>Page not found at /api/auth/profile/2</title>\n        <meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n        <style>\n    html * { padding: 0; margin: 0;\n}\n    body * { padding: 10px 20px;\n}\n    body * * { padding: 0;\n}\n    body { font-family: sans-serif; background:#eee; color:#000;\n}\n    body > :where(header, main, footer) { border-bottom: 1px solid #ddd;\n}\n    h1 { font-weight:normal; margin-bottom:.4em;\n}\n    h1 small { font-size: 60%; color:#666; font-weight:normal;\n}\n    table { border:none; border-collapse: collapse; width: 100%;\n}\n    td, th { vertical-align:top; padding: 2px 3px;\n}\n    th { width:12em; text-align:right; color:#666; padding-right:.5em;\n}\n    #info { background:#f6f6f6;\n}\n    #info ol { margin: 0.5em 4em;\n}\n    #info ol li { font-family: monospace;\n}\n    #summary { background: #ffc;\n}\n    #explanation { background:#eee; border-bottom: 0px none;\n}\n    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0;\n}\n  </style>\n    </head>\n    <body>\n        <header id=\"summary\">\n            <h1>Page not found \n                <small>(404)</small>\n            </h1>\n            <table class=\"meta\">\n                <tr>\n                    <th scope=\"row\">Request Method:</th>\n                    <td>GET</td>\n                </tr>\n                <tr>\n                    <th scope=\"row\">Request URL:</th>\n                    <td>http: //127.0.0.1:8000/api/auth/profile/2</td>\n                </tr>\n            </table>\n        </header>\n        <main id=\"info\">\n            <p>\n      Using the URLconf defined in \n                <code>employer_management.urls</code>,\n      Django tried these URL patterns, in this order:\n            </p>\n            <ol>\n                <li>\n                    <code>\n                admin/\n                \n              </code>\n                </li>\n                <li>\n                    <code>\n                api/auth/\n                \n              </code>\n                    <code>\n                signup/\n                [name='signup'\n]\n              </code>\n                </li>\n                <li>\n                    <code>\n                api/auth/\n                \n              </code>\n                    <code>\n                login/\n                [name='login'\n]\n              </code>\n                </li>\n                <li>\n                    <code>\n                api/auth/\n                \n              </code>\n                    <code>\n                token/refresh/\n                [name='token_refresh'\n]\n              </code>\n                </li>\n                <li>\n                    <code>\n                api/auth/\n                \n              </code>\n                    <code>\n                logout/\n                [name='logout'\n]\n              </code>\n                </li>\n                <li>\n                    <code>\n                api/auth/\n                \n              </code>\n                    <code>\n                profile/\n                [name='profile'\n]\n              </code>\n                </li>\n                <li>\n                    <code>\n                api/employers/\n                \n              </code>\n                </li>\n            </ol>\n            <p>\n        \n          The current path, \n                <code>api/auth/profile/2</code>,\n        \n        didn’t match any of these.\n            </p>\n        </main>\n        <footer id=\"explanation\">\n            <p>\n      You’re seeing this error because you have \n                <code>DEBUG = True</code> in\n      your Django settings file. Change that to\n                <code>False</code>, and Django\n      will display a standard 404 page.\n            </p>\n        </footer>\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "refresh token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzQzNTk5LCJpYXQiOjE3NDc3NDMyOTksImp0aSI6ImM4YzgzOGI5ZjNiZjQxMTk5YzRjNzZlODUwMTQzYWY0IiwidXNlcl9pZCI6NH0.ubTl-dGSJ98F2if9YsC8DteR3OuUP2-70r7Z8KHXmDQ",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NzgzNDA4NCwiaWF0IjoxNzQ3NzQ3Njg0LCJqdGkiOiI3NmMyY2M4ZjU3NzA0MzZlOTVlNDFiMDQzODA2MWMzOSIsInVzZXJfaWQiOjR9.04q634RcOSo1Lj7pnWgcOBU579KxOm_yDubjAKX4lNc\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}api/auth/token/refresh/"
+			},
+			"response": [
+				{
+					"name": "token not valid",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzQzNTk5LCJpYXQiOjE3NDc3NDMyOTksImp0aSI6ImM4YzgzOGI5ZjNiZjQxMTk5YzRjNzZlODUwMTQzYWY0IiwidXNlcl9pZCI6NH0.ubTl-dGSJ98F2if9YsC8DteR3OuUP2-70r7Z8KHXmDQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NzgzNDA4NCwiaWF0IjoxNzQ3NzQ3Njg0LCJqdGkiOiI3NmMyY2M4ZjU3NzA0MzZlOTVlNDFiMDQzODA2MWMzOSIsInVzZXJfaWQiOjR9.04q634RcOSo1Lj7pnWgcOBU579KxOm_yDubjAKX4lNc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/auth/token/refresh/"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Token is invalid\",\n    \"code\": \"token_not_valid\"\n}"
+				},
+				{
+					"name": "refresh token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzQzNTk5LCJpYXQiOjE3NDc3NDMyOTksImp0aSI6ImM4YzgzOGI5ZjNiZjQxMTk5YzRjNzZlODUwMTQzYWY0IiwidXNlcl9pZCI6NH0.ubTl-dGSJ98F2if9YsC8DteR3OuUP2-70r7Z8KHXmDQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NzgzNDA4NCwiaWF0IjoxNzQ3NzQ3Njg0LCJqdGkiOiI3NmMyY2M4ZjU3NzA0MzZlOTVlNDFiMDQzODA2MWMzOSIsInVzZXJfaWQiOjR9.04q634RcOSo1Lj7pnWgcOBU579KxOm_yDubjAKX4lNc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/auth/token/refresh/"
+					},
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzQ3NjQyLCJpYXQiOjE3NDc3NDMyOTksImp0aSI6Ijc2NDRjZTgxNWVhYzQ3YWZhNDM0MTEzNGY5YTBjOGUxIiwidXNlcl9pZCI6NH0.H_xGlBy1Gy13xEgcannrHMAnsHplBZcWR3X8NlHbfyo",
+						"type": "text"
+					}
+				],
+				"url": "{{base_url}}api/auth/logout/"
+			},
+			"response": []
+		},
+		{
+			"name": "create_employer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzUyNzc4LCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6ImJlM2NjZWFmZTJkNTQwYzhhYjVlNDRjYTgwYmFjNTAxIiwidXNlcl9pZCI6NH0.ezyXiOv67ovg3hyXZ24wN8r8q0T188eInemkZRGwds8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": \"karim@gmail.com\",\n    \"company_name\": \"techno\",\n    \"contact_person_name\": \"Rakib\",\n    \"email\": \"rakib@gmail.com\",\n    \"phone_number\": \"01521796084\",\n    \"address\": \"Mirpur-10, Dhaka\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}api/employers/"
+			},
+			"response": [
+				{
+					"name": "user is not authenticated",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzUyNzc4LCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6ImJlM2NjZWFmZTJkNTQwYzhhYjVlNDRjYTgwYmFjNTAxIiwidXNlcl9pZCI6NH0.ezyXiOv67ovg3hyXZ24wN8r8q0T188eInemkZRGwds8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"karim@gmail.com\",\n    \"company_name\": \"techno\",\n    \"contact_person_name\": \"Rakib\",\n    \"email\": \"rakib@gmail.com\",\n    \"phone_number\": \"01521796084\",\n    \"address\": \"Mirpur-10, Dhaka\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/employers/"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+				},
+				{
+					"name": "required field error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzY4MDcyLCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6Ijk4NDQyM2E0MTRlNzQwODdhYmY0YWM1ZWQ2NzcyOGY0IiwidXNlcl9pZCI6NH0.u4rX_tOIz4UVgpNCmJOlYfXdxX1ivMKDLqTMP0kuI3Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"karim@gmail.com\",\n    \"company_name\": \"techno\",\n    \"contact_person_name\": \"Rakib\",\n    \"email\": \"rakib@gmail.com\",\n    \"address\": \"Mirpur-10, Dhaka\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/employers/"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"phone_number\": [\n        \"This field is required.\"\n    ]\n}"
+				},
+				{
+					"name": "data type error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzY4MDcyLCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6Ijk4NDQyM2E0MTRlNzQwODdhYmY0YWM1ZWQ2NzcyOGY0IiwidXNlcl9pZCI6NH0.u4rX_tOIz4UVgpNCmJOlYfXdxX1ivMKDLqTMP0kuI3Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"karim@gmail.com\",\n    \"company_name\": \"techno\",\n    \"contact_person_name\": \"Rakib\",\n    \"email\": \"rakib@gmail.com\",\n    \"phone_number\": 01521796084,\n    \"address\": \"Mirpur-10, Dhaka\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/employers/"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"detail\": \"JSON parse error - Expecting ',' delimiter: line 6 column 22 (char 152)\"\n}"
+				}
+			]
+		},
+		{
+			"name": "retrive employers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzYzOTQzLCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6IjgxM2M1YjhkYTBlZjRmNDA5ZWRlMGNjNzZmMDU5NTdlIiwidXNlcl9pZCI6NH0.w68RMJfu-ccjV4_sW8MYCdHDXfMviAojjFitCv5kdCs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "{{base_url}}api/employers/"
+			},
+			"response": [
+				{
+					"name": "user is not authenticated",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzY4MDcyLCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6Ijk4NDQyM2E0MTRlNzQwODdhYmY0YWM1ZWQ2NzcyOGY0IiwidXNlcl9pZCI6NH0.u4rX_tOIz4UVgpNCmJOlYfXdxX1ivMKDLqTMP0kuI3Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://127.0.0.1:8000/api/employers/"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "employer_update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzUyNzc4LCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6ImJlM2NjZWFmZTJkNTQwYzhhYjVlNDRjYTgwYmFjNTAxIiwidXNlcl9pZCI6NH0.ezyXiOv67ovg3hyXZ24wN8r8q0T188eInemkZRGwds8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"company_name\": \"gradmate.ai\",\n    \"contact_person_name\": \"jahirul islam\",\n    \"email\": \"jahir@gmail.com\",\n    \"phone_number\": \"01521796083\",\n    \"address\": \"Tolarbugh 3rd Gate, Mirpur-1\",\n    \"created_at\": \"2025-05-20T14:02:11.344496Z\"\n}"
+				},
+				"url": "{{base_url}}api/employers/1"
+			},
+			"response": [
+				{
+					"name": "employer_update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzY4MDcyLCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6Ijk4NDQyM2E0MTRlNzQwODdhYmY0YWM1ZWQ2NzcyOGY0IiwidXNlcl9pZCI6NH0.u4rX_tOIz4UVgpNCmJOlYfXdxX1ivMKDLqTMP0kuI3Q",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"company_name\": \"gradmate.ai\",\n    \"contact_person_name\": \"jahirul islam\",\n    \"email\": \"jahirgmail.com\",\n    \"phone_number\": \"01521796083\",\n    \"address\": \"Tolarbugh 3rd Gate, Mirpur-1, Dhaka\",\n    \"created_at\": \"2025-05-20T14:02:11.344496Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/employers/1"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"email\": [\n        \"Enter a valid email address.\"\n    ]\n}"
+				},
+				{
+					"name": "employer_update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzUyNzc4LCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6ImJlM2NjZWFmZTJkNTQwYzhhYjVlNDRjYTgwYmFjNTAxIiwidXNlcl9pZCI6NH0.ezyXiOv67ovg3hyXZ24wN8r8q0T188eInemkZRGwds8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"company_name\": \"gradmate.ai\",\n    \"contact_person_name\": \"jahirul islam\",\n    \"email\": \"jahir@gmail.com\",\n    \"phone_number\": \"01521796083\",\n    \"address\": \"Tolarbugh 3rd Gate, Mirpur-1\",\n    \"created_at\": \"2025-05-20T14:02:11.344496Z\"\n}"
+						},
+						"url": "{{base_url}}api/employers/1/"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+				},
+				{
+					"name": "required field error",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzY4MDcyLCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6Ijk4NDQyM2E0MTRlNzQwODdhYmY0YWM1ZWQ2NzcyOGY0IiwidXNlcl9pZCI6NH0.u4rX_tOIz4UVgpNCmJOlYfXdxX1ivMKDLqTMP0kuI3Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"company_name\": \"gradmate.ai\",\n    \"contact_person_name\": \"jahirul islam\",\n    \"email\": \"jahir@gmail.com\",\n    \"phone_number\": \"01521796083\",\n    \"created_at\": \"2025-05-20T14:02:11.344496Z\"\n}"
+						},
+						"url": "{{base_url}}api/employers/1/"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"address\": [\n        \"This field is required.\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "delete_employee",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzUyNzc4LCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6ImJlM2NjZWFmZTJkNTQwYzhhYjVlNDRjYTgwYmFjNTAxIiwidXNlcl9pZCI6NH0.ezyXiOv67ovg3hyXZ24wN8r8q0T188eInemkZRGwds8",
+						"type": "text"
+					}
+				],
+				"url": "{{base_url}}api/employers/2/"
+			},
+			"response": [
+				{
+					"name": "employer doesn't exist",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzY4MDcyLCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6Ijk4NDQyM2E0MTRlNzQwODdhYmY0YWM1ZWQ2NzcyOGY0IiwidXNlcl9pZCI6NH0.u4rX_tOIz4UVgpNCmJOlYfXdxX1ivMKDLqTMP0kuI3Q",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/employers/2/"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"No Employer matches the given query.\"\n}"
+				},
+				{
+					"name": "delete_employee",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzUyNzc4LCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6ImJlM2NjZWFmZTJkNTQwYzhhYjVlNDRjYTgwYmFjNTAxIiwidXNlcl9pZCI6NH0.ezyXiOv67ovg3hyXZ24wN8r8q0T188eInemkZRGwds8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": "{{base_url}}api/employers/1/"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "retrive individual employer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzYzOTQzLCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6IjgxM2M1YjhkYTBlZjRmNDA5ZWRlMGNjNzZmMDU5NTdlIiwidXNlcl9pZCI6NH0.w68RMJfu-ccjV4_sW8MYCdHDXfMviAojjFitCv5kdCs",
+						"type": "text"
+					}
+				]
+			},
+			"response": [
+				{
+					"name": "employer not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzY4MDcyLCJpYXQiOjE3NDc3NDc2ODQsImp0aSI6Ijk4NDQyM2E0MTRlNzQwODdhYmY0YWM1ZWQ2NzcyOGY0IiwidXNlcl9pZCI6NH0.u4rX_tOIz4UVgpNCmJOlYfXdxX1ivMKDLqTMP0kuI3Q",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/employers/1/"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"detail\": \"No Employer matches the given query.\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/",
+			"type": "string"
+		}
+	]
+}
